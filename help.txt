@@ -1,0 +1,4 @@
+https://www.youtube.com/watch?v=mScd-Pc_pX0&t=223s
+créer django
+docker compose run --rm app sh -c "django-admin startproject app ." 
+note : docker compose run --rm app sh -c "???" -> Cela permet de ne pas laisser de conteneurs inutiles en fonctionnement, tout en exécutant des commandes ponctuelles dans des environnements Docker.
