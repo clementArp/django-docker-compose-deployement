@@ -1,4 +1,27 @@
 https://www.youtube.com/watch?v=mScd-Pc_pX0&t=223s
+https://uwsgi-docs.readthedocs.io/en/latest/Nginx.html#what-is-the-uwsgi-params-file
 créer django
 docker compose run --rm app sh -c "django-admin startproject app ." 
 note : docker compose run --rm app sh -c "???" -> Cela permet de ne pas laisser de conteneurs inutiles en fonctionnement, tout en exécutant des commandes ponctuelles dans des environnements Docker.
+
+docker compose -f docker-compose-deploy.yml down --volumes
+Demarre docker-compose-deploy yml et supprime les volumes du docker-compose précedent
+docker compose -f docker-compose-deploy.yml build
+docker compose -f docker-compose-deploy.yml up
+
+cat ~/.ssh/id_rsa.pu
+
+Apprendre ssh authentification
+    créer une clé ssh  
+        ssh-keygen -t rsa -b 4096 -C "clement.nadaud@gmail.com"
+    changer les accées
+        Le dossier .ssh doit être restreint à son propriétaire pour empêcher les accès non autorisés (700).
+        chmod 700 ~/.ssh
+        La clé privée id_rsa doit être accessible uniquement au propriétaire (600).
+        chmod 600 ~/.ssh/id_rsa
+        La clé publique est lisible par tous mais modifiable uniquement par le propriétaire.
+        chmod 644 ~/.ssh/id_rsa.pub
+    lire la clef privée
+        cat ~/.ssh/id_rsa
+    lire la clef publique
+        cat ~/.ssh/id_rsa.pub
